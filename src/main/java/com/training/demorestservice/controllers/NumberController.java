@@ -13,17 +13,19 @@ import com.training.other.MockNumberService;
 @RequestMapping("numbers")
 public class NumberController {
 
-	@Autowired
+	@Autowired 
 	private NumberService numberService;
 	
 	@Autowired
 	private MockNumberService mockService;
 	
+	//Endpoint /power
 	@GetMapping("power")
 	public double getPower(@RequestParam double a, @RequestParam double b) {
 		return numberService.findExponent(a, b);
 	}
 	
+	//Endpoint: /poffset
 	@GetMapping("poffset")
 	public double getPowerWithOffset(@RequestParam double a, @RequestParam double b) {
 		double exp = numberService.findExponent(a, b);
